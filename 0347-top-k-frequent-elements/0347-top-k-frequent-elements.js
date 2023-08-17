@@ -76,7 +76,7 @@ var topKFrequent = function(nums, k) {
     let answerArr = []
 
     
-    for (let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) { // O(n) where n is the length of nums
         if (!frequencyHashMap[nums[i]]) {
             frequencyHashMap[nums[i]] = 1
         } else {
@@ -86,7 +86,7 @@ var topKFrequent = function(nums, k) {
     
     
     let freqArr = Array(nums.length + 1) // [-,-,-,-,-,-,-]
-    let pairs = Object.entries(frequencyHashMap) // [['1',3], ['2',2], ['3',1]]
+    let pairs = Object.entries(frequencyHashMap) // [['1',3], ['2',2], ['3',1]] 0(n) where n is the length of entries
     
     for (let j = 0; j < pairs.length; j++) {
         
@@ -100,7 +100,7 @@ var topKFrequent = function(nums, k) {
     }
     
     // console.log('this is the freqArr', freqArr)
-    let n = freqArr.length - 1
+    let n = freqArr.length - 1 
     
     while (answerArr.length < k) {
         
